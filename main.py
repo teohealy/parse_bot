@@ -26,7 +26,7 @@ def get_first_news():
         article_url_title = article.find("a", {"class": "b-info-block__cont b-info-block__cont_state_reviews"})
         if article_url_title is None:
             continue
-        article_url = 'https://news.drom.ru/' + article_url_title.get('href')
+        article_url = article_url_title.get('href')
 
         article_date = article.find('div', class_='b-info-block__text b-info-block__text_type_news-date').text.strip()
 
@@ -64,7 +64,7 @@ def check_news_update():
         article_url_title = article.find("a", {"class": "b-info-block__cont b-info-block__cont_state_reviews"})
         if article_url_title is None:
             continue
-        article_url = 'https://news.drom.ru/' + article_url_title.get('href')
+        article_url = article_url_title.get('href')
         article_id = article_url.split('/')[-1]
         article_id = article_id[:-5]
 
